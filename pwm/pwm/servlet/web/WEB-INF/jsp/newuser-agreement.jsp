@@ -54,7 +54,7 @@
         <div id="buttonbar">
             <form action="<pwm:url url='NewUser'/>" method="post"
                   enctype="application/x-www-form-urlencoded"
-                  onsubmit="handleFormSubmit('submitBtn',this);return false">
+                  onsubmit="handleFormSubmit('submitBtn',this);return false" style="display: inline;">
                 <%-- remove the next line to remove the "I Agree" checkbox --%>
                 <input type="checkbox" id="agreeCheckBox" onclick="updateContinueButton()" data-dojo-type="dijit.form.CheckBox"
                        onchange="updateContinueButton()"/>&nbsp;&nbsp;<label for="agreeCheckBox"><pwm:Display
@@ -67,10 +67,8 @@
                        id="submitBtn"/>
                 <input type="hidden" name="pwmFormID" id="pwmFormID" value="<pwm:FormID/>"/>
             </form>
-        </div>
-        <div style="text-align: center">
             <form action="<%=request.getContextPath()%>/public/<pwm:url url='NewUser'/>" method="post"
-                  enctype="application/x-www-form-urlencoded">
+                  enctype="application/x-www-form-urlencoded" style="display: inline;">
                 <input type="hidden" name="processAction" value="reset"/>
                 <input type="submit" name="button" class="btn"
                        value="<pwm:Display key="Button_Cancel"/>"

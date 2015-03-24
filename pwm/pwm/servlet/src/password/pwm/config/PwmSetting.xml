@@ -2003,6 +2003,13 @@
             <value>true</value>
         </default>
     </setting>
+    <setting key="newUser.username.prefix" level="1">
+        <label>Random Username Prefix</label>
+        <description><![CDATA[Prefix the new username when using the Random Username Characters. If blank, no prefix will be added.]]></description>
+        <default>
+            <value/>
+        </default>
+    </setting>
     <setting key="newUser.username.characters" level="1">
         <label>Random Username Characters</label>
         <description><![CDATA[Available characters for the new username.  If blank, a random LDAP entry name will not be generated and the <i>LDAP Naming Attribute</i> must be included in the form.]]></description>

@@ -502,9 +502,13 @@ public class NewUserServlet extends TopServlet {
         if (isUsernameRandomGenerated(config)) {
             final String randUsernameChars = config.readSettingAsString(PwmSetting.NEWUSER_USERNAME_CHARS);
             final int randUsernameLength = (int)config.readSettingAsLong(PwmSetting.NEWUSER_USERNAME_LENGTH);
+            final String randUsernamePrefix = config.readSettingAsString(PwmSetting.NEWUSER_USERNAME_PREFIX);
             final PwmRandom RANDOM = PwmRandom.getInstance();
 
             final StringBuilder sb = new StringBuilder();
+            if (randUsernamePrefix != null && randUsernamePrefix.length() > 0) {
+                sb.append(randUsernamePrefix);
+            }
             for (int i = 0; i < randUsernameLength; i++) {
                 sb.append(randUsernameChars.charAt(RANDOM.nextInt(randUsernameChars.length())));
             }

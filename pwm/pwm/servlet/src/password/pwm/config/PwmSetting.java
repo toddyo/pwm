@@ -556,6 +556,8 @@ public enum PwmSetting {
             "newUser.writeAttributes", PwmSettingSyntax.ACTION, Category.NEWUSER),
     NEWUSER_DELETE_ON_FAIL(
             "newUser.deleteOnFail", PwmSettingSyntax.BOOLEAN, Category.NEWUSER),
+    NEWUSER_USERNAME_PREFIX(
+            "newUser.username.prefix", PwmSettingSyntax.STRING, Category.NEWUSER),
     NEWUSER_USERNAME_CHARS(
             "newUser.username.characters", PwmSettingSyntax.STRING, Category.NEWUSER),
     NEWUSER_USERNAME_LENGTH(

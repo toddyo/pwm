@@ -370,8 +370,12 @@ public class NewUserServlet extends TopServlet {
         // set up the user creation attributes
         final Map<String,String> createAttributes = new HashMap<String,String>();
         for (final FormConfiguration formItem : newUserForm) {
+            LOGGER.trace(pwmSession, "Attribute from form: "+ formItem.getName()+" = "+formValues.get(formItem));
             final String attributeName = formItem.getName();
-            createAttributes.put(attributeName, formValues.get(attributeName));
+            final String attributeValue = formValues.get(attributeName);
+            if (attributeName != null && attributeName.length() > 0 && attributeValue != null && attributeValue.length() > 0) {
+                createAttributes.put(attributeName, attributeValue);
+            }
         }
 
         // read the creation object classes from configuration
